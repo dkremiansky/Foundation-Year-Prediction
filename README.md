@@ -15,9 +15,9 @@ I checked whether preprocessing (removing common words, punctuation marks, etc.)
 Aggregation of sum/average/chain etc.
 
 The representations I used are:
-1)tf-idf where max-features = 500
-2)Word2Vec that we trained when the parameters of the model are: a vector of length 100, a window of size 5 and training rounds = 100
-3)A pre-trained representation model from the Word2Vec library of gensim   named Glove when instead of words that do not appear in the trained model we put a vector of zerosin the appropriate length
-4)A model (representation and classification) of the library fastText  with parameters: vector dimension of a word is 50, N - gram = 2 , the loss function is hierarchical softmax and the number of training rounds is 10
-5)A model (representation and regression) RoBerta  with the parameters: maximum length of 256, batch size also of the training
+1) tf-idf where max-features = 500
+2) Word2Vec that we trained when the parameters of the model are: a vector of length 100, a window of size 5 and training rounds = 100
+3) A pre-trained representation model from the Word2Vec library of gensim   named Glove when instead of words that do not appear in the trained model we put a vector of zerosin the appropriate length
+4) A model (representation and classification) of the library fastText  with parameters: vector dimension of a word is 50, N - gram = 2 , the loss function is hierarchical softmax and the number of training rounds is 10
+5) A model (representation and regression) RoBerta  with the parameters: maximum length of 256, batch size also of the training
 and also of the validation is 8, learning - rate = 0.1 and number of training rounds = 5
