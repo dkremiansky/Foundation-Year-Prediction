@@ -23,4 +23,11 @@ The representations I used are:
 and also of the validation is 8, learning - rate = 0.1 and number of training rounds = 5
 
 After we have the features I trained classification models that will try to predict the year of establishment given
-The features. For the representation models of tf-idf, Word2Vec and Glove we train 6 classification models: Linear regression, tree-based regression, logistic regression, linear SVC, KNN and MLP. I focused in 4 out of 6 models (because I consistently got really bad results in logistic regression and linear SVC). For the representation fastText  I used the built-in prediction of the library and did not train a model on my own. For RoBerta  I also useD the built-in prediction when actually connecting a regression head to the network (This is through parameter num-labels = 1).
+The features. For the representation models of tf-idf, Word2Vec and Glove I trained 6 classification models: Linear regression, tree-based regression, logistic regression, linear SVC, KNN and MLP. I focused in 4 out of 6 models (because I consistently got really bad results in logistic regression and linear SVC). For the representation fastText  I used the built-in prediction of the library and did not train a model on my own. For RoBerta  I also used the built-in prediction when actually connecting a regression head to the network (This is through parameter num-labels = 1).
+
+I assessd within each model (for different representations) and between different models mainly on a basis of MSE . In addition, some models have a built-in score function that we can use to
+to compare results for the same model (since it may be different between the different models, I did not use it For the purpose of comparing the models). I also calculate an index of the sum of the errors (the difference between the years) approximately
+absolute, i.e. Manhattan distance ( L1 - norm ), which in my eyes will be easier to understand and compare according to the nature
+the task.
+
+Finally, I chose the best model in terms of the MSE result and with its help I made predictions on all the missing data.
