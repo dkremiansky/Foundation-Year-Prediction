@@ -21,3 +21,6 @@ The representations I used are:
 4) A model (representation and classification) of the library fastText  with parameters: vector dimension of a word is 50, N - gram = 2 , the loss function is hierarchical softmax and the number of training rounds is 10
 5) A model (representation and regression) RoBerta  with the parameters: maximum length of 256, batch size also of the training
 and also of the validation is 8, learning - rate = 0.1 and number of training rounds = 5
+
+After we have the features I trained classification models that will try to predict the year of establishment given
+The features. For the representation models of tf-idf, Word2Vec and Glove we train 6 classification models: Linear regression, tree-based regression, logistic regression, linear SVC, KNN and MLP. I focused in 4 out of 6 models (because I consistently got really bad results in logistic regression and linear SVC). For the representation fastText  I used the built-in prediction of the library and did not train a model on my own. For RoBerta  I also useD the built-in prediction when actually connecting a regression head to the network (This is through parameter num-labels = 1).
